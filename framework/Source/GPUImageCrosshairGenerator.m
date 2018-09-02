@@ -71,8 +71,8 @@ NSString *const kGPUImageCrosshairFragmentShaderString = SHADER_STRING
     }
     
     runSynchronouslyOnVideoProcessingQueue(^{
-        crosshairWidthUniform = [filterProgram uniformIndex:@"crosshairWidth"];
-        crosshairColorUniform = [filterProgram uniformIndex:@"crosshairColor"];
+        self->crosshairWidthUniform = [self->filterProgram uniformIndex:@"crosshairWidth"];
+        self->crosshairColorUniform = [self->filterProgram uniformIndex:@"crosshairColor"];
         
         self.crosshairWidth = 5.0;
         [self setCrosshairColorRed:0.0 green:1.0 blue:0.0];
@@ -92,7 +92,7 @@ NSString *const kGPUImageCrosshairFragmentShaderString = SHADER_STRING
     }
     
     runSynchronouslyOnVideoProcessingQueue(^{
-        [GPUImageContext setActiveShaderProgram:filterProgram];
+        [GPUImageContext setActiveShaderProgram:self->filterProgram];
         
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
 #else
