@@ -60,7 +60,7 @@ NSString *const kGPUSolidColorFragmentShaderString = SHADER_STRING
     }
     
     runSynchronouslyOnVideoProcessingQueue(^{
-        [GPUImageContext setActiveShaderProgram:filterProgram];
+        [GPUImageContext setActiveShaderProgram:self->filterProgram];
         
         self->outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:[self sizeOfFBO] textureOptions:self.outputTextureOptions onlyTexture:NO];
         [self->outputFramebuffer activateFramebuffer];

@@ -100,13 +100,13 @@ NSString *const kGPUImageCrosshairFragmentShaderString = SHADER_STRING
         glEnable(GL_VERTEX_PROGRAM_POINT_SIZE);
 #endif
         
-        outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:[self sizeOfFBO] textureOptions:self.outputTextureOptions onlyTexture:NO];
-        [outputFramebuffer activateFramebuffer];
+        self->outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:[self sizeOfFBO] textureOptions:self.outputTextureOptions onlyTexture:NO];
+        [self->outputFramebuffer activateFramebuffer];
         
         glClearColor(0.0, 0.0, 0.0, 0.0);
         glClear(GL_COLOR_BUFFER_BIT);
         
-        glVertexAttribPointer(filterPositionAttribute, 2, GL_FLOAT, 0, 0, crosshairCoordinates);
+        glVertexAttribPointer(self->filterPositionAttribute, 2, GL_FLOAT, 0, 0, crosshairCoordinates);
         
         glDrawArrays(GL_POINTS, 0, (GLsizei)numberOfCrosshairs);
         

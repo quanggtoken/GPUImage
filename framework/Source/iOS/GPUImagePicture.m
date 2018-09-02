@@ -328,8 +328,8 @@
             NSInteger textureIndexOfTarget = [[self->targetTextureIndices objectAtIndex:indexOfObject] integerValue];
             
             [currentTarget setCurrentlyReceivingMonochromeInput:NO];
-            [currentTarget setInputSize:pixelSizeOfImage atIndex:textureIndexOfTarget];
-            [currentTarget setInputFramebuffer:outputFramebuffer atIndex:textureIndexOfTarget];
+            [currentTarget setInputSize:self->pixelSizeOfImage atIndex:textureIndexOfTarget];
+            [currentTarget setInputFramebuffer:self->outputFramebuffer atIndex:textureIndexOfTarget];
             [currentTarget newFrameReadyAtTime:kCMTimeIndefinite atIndex:textureIndexOfTarget];
         }
         

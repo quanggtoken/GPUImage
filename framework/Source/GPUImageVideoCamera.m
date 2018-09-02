@@ -1036,7 +1036,7 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
         for (id<GPUImageInput> currentTarget in self->targets)
         {
             NSInteger indexOfObject = [self->targets indexOfObject:currentTarget];
-            [currentTarget setInputRotation:self->outputRotation atIndex:[[targetTextureIndices objectAtIndex:indexOfObject] integerValue]];
+            [currentTarget setInputRotation:self->outputRotation atIndex:[[self->targetTextureIndices objectAtIndex:indexOfObject] integerValue]];
         }
     });
 }

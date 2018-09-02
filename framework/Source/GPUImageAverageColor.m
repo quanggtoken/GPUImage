@@ -176,7 +176,7 @@ NSString *const kGPUImageColorAveragingFragmentShaderString = SHADER_STRING
         }
         
         [GPUImageContext useImageProcessingContext];
-        [outputFramebuffer activateFramebuffer];
+        [self->outputFramebuffer activateFramebuffer];
         glReadPixels(0, 0, (int)self->finalStageSize.width, (int)self->finalStageSize.height, GL_RGBA, GL_UNSIGNED_BYTE, self->rawImagePixels);
         
         NSUInteger redTotal = 0, greenTotal = 0, blueTotal = 0, alphaTotal = 0;

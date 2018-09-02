@@ -118,7 +118,7 @@ NSString *const kGPUImageSharpenFragmentShaderString = SHADER_STRING
 - (void)setupFilterForSize:(CGSize)filterFrameSize;
 {
     runSynchronouslyOnVideoProcessingQueue(^{
-        [GPUImageContext setActiveShaderProgram:filterProgram];
+        [GPUImageContext setActiveShaderProgram:self->filterProgram];
         
         if (GPUImageRotationSwapsWidthAndHeight(self->inputRotation))
         {

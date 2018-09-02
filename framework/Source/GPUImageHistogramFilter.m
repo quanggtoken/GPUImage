@@ -186,7 +186,7 @@ NSString *const kGPUImageHistogramAccumulationFragmentShaderString = SHADER_STRI
                 
                 
                 self->thirdFilterPositionAttribute = [self->thirdFilterProgram attributeIndex:@"position"];
-                [GPUImageContext setActiveShaderProgram:thirdFilterProgram];
+                [GPUImageContext setActiveShaderProgram:self->thirdFilterProgram];
                 
                 glEnableVertexAttribArray(self->thirdFilterPositionAttribute);
             });
